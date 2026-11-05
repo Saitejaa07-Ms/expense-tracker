@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Personal Expense Tracker
 
 React + Vite + Tailwind + Chart.js frontend, FastAPI + SQLAlchemy + PostgreSQL backend, JWT auth, Alembic migrations.
@@ -41,3 +42,7 @@ cd backend && pytest
 
 Move tokens to HttpOnly cookies, add rate limiting, password reset / email verification,
 budgets CRUD (table described in the spec but not yet implemented), and per-user currency.
+=======
+# expense-tracker
+Personal Expense Tracker using React and FastAPI
+>>>>>>> 135c9b09b0304d37289d1afc21da061811d4ce34
