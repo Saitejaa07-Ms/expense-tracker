@@ -1,0 +1,25 @@
+services:
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: expense_tracker
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - expense_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@database:5432/expense_tracker
+      JWT_SECRET: local-development-secret-change-me
+      FRONTEND_URL: http://localhost:5173
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+
+volumes:
+  expense_data:
